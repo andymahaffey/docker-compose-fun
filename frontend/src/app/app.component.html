@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <h3>Put</h3>
+  <form [formGroup]="putCacheForm" (ngSubmit)="putCache()">
+    <div class="input-wrapper">
+      <div>Key</div>
+      <input id="key" type="text" formControlName="key">
+      <div>Value</div>
+      <input id="value" type="text" formControlName="value">
+      <div class="button-row">
+        <button type="submit">Put</button>
+      </div>
+    </div>
+  </form>
+
+
+  <h3>Get</h3>
+  <form [formGroup]="getCacheForm" (ngSubmit)="getCache()">
+    <div class="input-wrapper">
+      <div>Key</div>
+      <input id="key" type="text" formControlName="key">
+      <div class="button-row">
+        <button type="submit">Get</button>
+      </div>
+      <pre *ngIf="response">{{response | json}}</pre>
+
+    </div>    
+  </form>
+</div>

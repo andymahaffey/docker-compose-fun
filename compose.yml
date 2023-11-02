@@ -1,0 +1,14 @@
+# add configs to switch between local and server settings
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+  edge:
+    build: ./Api
+    ports:
+      - "5221:80"
+  web:
+    build: ./frontend
+    ports:
+      - "8080:80"
