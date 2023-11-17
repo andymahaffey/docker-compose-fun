@@ -1,8 +1,15 @@
+using Api.Data.Providers;
+using Api.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddSingleton<ICassandraProvider, CassandraProvider>();
+builder.Services.AddSingleton<IShoppingCartService, ShoppingCartService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

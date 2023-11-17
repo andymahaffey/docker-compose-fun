@@ -1,5 +1,9 @@
 # add configs to switch between local and server settings
 services:
+  cassandra:
+    image: "cassandra:latest"
+    ports:
+      - "9042:9042"
   redis:
     image: "redis:alpine"
     ports:
